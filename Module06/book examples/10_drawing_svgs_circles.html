@@ -16,7 +16,7 @@
 			var h = 50;
 			
 			//Data
-			var dataset = [ 5, 10, 15, 20, 25 ];
+			var dataset = [ 5, 10, 15, 20, 12, 25, 4, 34 ];
 			
 			//Create SVG element
 			var svg = d3.select("body")
@@ -35,6 +35,11 @@
 				   .attr("cy", h/2)
 				   .attr("r", function(d) {
 						return d;
+				   })
+				   .attr("fill", function(d) {
+					if (d < 15)
+					  return "red";
+					  else return "teal";
 				   });
 
 		</script>
