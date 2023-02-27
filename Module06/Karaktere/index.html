@@ -5,15 +5,13 @@
   <title></title>
 
   <script type="text/javascript" src="logik.js"></script>
-  <script type="text/javascript" src="../d3.js"></script>
 
   <script type="text/javascript">
 
     let numbers = [];
     function onClick() {
         var tal=document.getElementById("tal").value;
-        const w = 500;
-        const h = 100;
+        
         numbers.push(parseInt(tal));
 
         // opdater tallene
@@ -50,7 +48,6 @@
         <li>Karakterne er: <scan id="tallene"/></li>
         <li>Summen <scan id="summen"/></li>
     </ul>
-    <svg id="diagram"></svg>
 
 </body>
 </html>

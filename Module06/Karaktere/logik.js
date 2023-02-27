@@ -1,8 +1,7 @@
 function sum(data) {
     let resultat = 0;
-    data.forEach(value => {
-        resultat += value;
-    });
+    for (let i=0; i < data.length; i++)
+       resultat += data[i];
     return resultat;
  }
 
