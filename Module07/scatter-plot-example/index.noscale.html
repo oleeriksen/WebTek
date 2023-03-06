@@ -3,7 +3,7 @@
 
 <head>
   <title>Scatter Plot</title>
-  <script type="text/javascript" src="d3.js"></script>
+  <script type="text/javascript" src="../d3.js"></script>
   <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -31,10 +31,10 @@
       .attr("height", h);
 
     // Lave scatter plot (punktdiagram)
-    svg.selectAll("circle") // <-- Før var det 'rect'
+    svg.selectAll("circle") // fordi vi skal generere cirkler
       .data(dataset)
       .enter()
-      .append("circle") // <-- Før var det 'rect'
+      .append("circle") // 
       .attr("cx", function(d) {
         // 'd' er et koordinat på formen [x, y]
         return d[0]; // Første værdi i indre array (x)

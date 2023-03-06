@@ -17,13 +17,20 @@
     // Selve datasættet
     const dataset = ds; //GetDataPoints(400);
 
+    // define domain limits
+    let xMin = d3.min(dataset, function (d) {return d[0];});
+    let xMax = d3.max(dataset, function (d) {return d[0];});
+
+    let yMin = d3.min(dataset, function (d) {return d[1];});
+    let yMax = d3.max(dataset, function (d) {return d[1];});
+
     // Lav en skala for x-aksen
     const xScale = d3.scaleLinear()
-      .domain([d3.min(dataset, function (d) {return d[0];}), d3.max(dataset, function (d) {return d[0];})])
+      .domain([xMin, xMax])
       .range([10, w - 10]);
     // Lav en skala for y-aksen
     const yScale = d3.scaleLinear()
-      .domain([d3.min(dataset, function (d) {return d[1];}), d3.max(dataset, function (d) {return d[1];})])
+      .domain([yMin, yMax])
       .range([10, h-10]);
 
     // Lav SVG-elementet
