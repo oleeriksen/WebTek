@@ -15,7 +15,7 @@
     const h = 800;
 
     // Selve datasættet
-    const dataset = ds; //GetDataPoints(400);
+    const dataset = GetDataPoints(800);
 
     // define domain limits
     let xMin = d3.min(dataset, function (d) {return d[0];});
@@ -31,7 +31,7 @@
     // Lav en skala for y-aksen
     const yScale = d3.scaleLinear()
       .domain([yMin, yMax])
-      .range([10, h-10]);
+      .range([h-10, 10]);
 
     // Lav SVG-elementet
     const svg = d3.select("body")
