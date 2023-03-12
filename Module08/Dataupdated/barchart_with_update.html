@@ -59,7 +59,7 @@
              dataset[i] += 5;
 
           svg.selectAll("rect")
-             .data(dataset) // bliver bundet igen
+             .data(dataset) // bliver bundet igen INGEN enter() og append()
              .attr("y", function (d) {
                    return h - (d * 4);
              })
