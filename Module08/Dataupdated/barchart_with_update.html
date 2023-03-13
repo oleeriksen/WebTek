@@ -59,6 +59,9 @@
           svg.selectAll("rect")
              .data(dataset) // bliver bundet igen INGEN enter() og append()
              // x-attributten opdateres IKKE fordi den skal bevares
+             .transition()
+             .duration(1000)
+             .delay(1000)
              .attr("y", function (d) {
                    return h - (d * 4);
              })

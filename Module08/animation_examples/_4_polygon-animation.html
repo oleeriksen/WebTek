@@ -12,7 +12,8 @@
 <body>
   <h1>Tre animerede polygoner ...</h1>
 
-  <button id="klik">Tryk her for at starte animationen!</button>
+  <button id="start">Tryk her for at STARTE animationen!</button>
+  <button id="stop">Tryk her for at STOPPE animationen!</button>
 
   <br />
 
@@ -45,7 +46,7 @@
     function animer() {
       d3.selectAll("polygon")
         .transition()
-        .duration(100)
+        .duration(500)
         .attr("points", function (d) {
           // Hvor meget punkterne kan flytte sig
           const variation = 20;
@@ -78,13 +79,19 @@
         })
     }
 
+    let intervalId = 0;
     // Knapen vælges via dens id 'klik'
-    d3.select("#klik")
+    d3.select("#start")
       .on("click", function () {
         // Koden herunder køres kun ved tryk på knappen
         animer(); // Lav første animation uden delay
-        setInterval(animer, 500); // Lav resten med intervaller
+        intervalId = setInterval(animer, 500); // Lav resten med intervaller
       });
+
+      d3.select("#stop")
+        .on("click", function() {
+          clearInterval(intervalId);
+        });
 
   </script>
 </body>

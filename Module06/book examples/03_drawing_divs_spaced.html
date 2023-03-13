@@ -17,6 +17,15 @@
 	</head>
 	<body>
 		<script type="text/javascript">
+
+let scale = d3.scaleLinear()
+            .domain([0,100])
+            .range([500, 0]);
+
+// Her testes scale-funktionen
+console.log(scale(0));   // Skal udskrive '500'
+console.log(scale(50)); // Skal udskrive '250'
+console.log(scale(100)); // Skal udskrive '0'
 		
 		    let dataset = [ 5, 10, 15, 20, 25, 2, 34, 12, 4 ];
 			
